@@ -11,28 +11,28 @@
             height: 100%;
             overflow: auto;
         }
+
         body::-webkit-scrollbar {
-    display: none; /* Hide scrollbar */
-}
+            display: none; /* Hide scrollbar */
+        }
+
         /* Keyframe animation for bounce effect */
-@keyframes bounce {
-    0% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-10px); /* Upward bounce */
-    }
-    100% {
-        transform: translateY(0);
-    }
-}
+        @keyframes bounce {
+            0% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px); /* Upward bounce */
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
 
-/* Apply the bounce effect to the body or html element when the page scrolls */
-body {
-    animation: bounce 1s ease-out 1; /* Adjust timing as needed */
-}
-
-/* Optionally, you can use JavaScript to add bounce effect dynamically when user reaches top or bottom */
+        /* Optionally, you can apply the bounce effect dynamically with JavaScript */
+        .bounced {
+            animation: bounce 1s ease-out 1;
+        }
 
         .screenshot-container {
             width: 100%; 
@@ -53,6 +53,18 @@ body {
     <div class="screenshot-container">
         <img src="screencapture-file-C-Users-vaish-Downloads-saveweb2zip-com-what-if-you-knew-it-was-6louq4n-gamma-site-1-index-html-2025-02-01-00_26_52.png" alt="Website Screenshot">
     </div>
+
+    <script>
+        // Detect when scroll reaches top or bottom of the page
+        window.addEventListener('scroll', function() {
+            if (window.scrollY === 0 || window.innerHeight + window.scrollY >= document.body.offsetHeight) {
+                document.body.classList.add('bounced'); // Add bounce effect
+                setTimeout(function() {
+                    document.body.classList.remove('bounced'); // Remove bounce effect after animation
+                }, 1000); // Match the duration of the animation
+            }
+        });
+    </script>
 
 </body>
 </html>
