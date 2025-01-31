@@ -11,6 +11,28 @@
             height: 100%;
             overflow: auto;
         }
+        body::-webkit-scrollbar {
+    display: none; /* Hide scrollbar */
+}
+        /* Keyframe animation for bounce effect */
+@keyframes bounce {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px); /* Upward bounce */
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* Apply the bounce effect to the body or html element when the page scrolls */
+body {
+    animation: bounce 1s ease-out 1; /* Adjust timing as needed */
+}
+
+/* Optionally, you can use JavaScript to add bounce effect dynamically when user reaches top or bottom */
 
         .screenshot-container {
             width: 100%; 
@@ -29,7 +51,7 @@
 <body>
 
     <div class="screenshot-container">
-        <img src="616b9c53-fd02-43c0-88bc-0003a6b0db2a.png" alt="Website Screenshot">
+        <img src="screencapture-file-C-Users-vaish-Downloads-saveweb2zip-com-what-if-you-knew-it-was-6louq4n-gamma-site-1-index-html-2025-02-01-00_26_52.png" alt="Website Screenshot">
     </div>
 
 </body>
